@@ -1,7 +1,6 @@
 import React from "react";
 import UpdateUser from "./UpdateUser";
-import { useState } from 'react'
-
+import { useState } from "react";
 
 const UserDetails = ({ users, deleteUser, updateUser }) => {
   const [selectedUser, setSelectedUser] = useState(null);
@@ -9,7 +8,6 @@ const UserDetails = ({ users, deleteUser, updateUser }) => {
   const handleDelete = (userId) => {
     deleteUser(userId);
   };
-
 
   const handleUpdate = (user) => {
     setSelectedUser(user);
@@ -65,9 +63,14 @@ const UserDetails = ({ users, deleteUser, updateUser }) => {
               </div>
             </div>
 
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal"
-           data-bs-target="#exampleModal" onClick={() => handleUpdate(user)}>
-             Edit
+            <button
+              type="button"
+              className="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              onClick={() => handleUpdate(user)}
+            >
+              Edit
             </button>
 
             <button
@@ -78,11 +81,8 @@ const UserDetails = ({ users, deleteUser, updateUser }) => {
               Delete
             </button>
           </div>
-           
-
-           ))}
-           { <UpdateUser user={selectedUser} updateUser={updateUser}/>}
-
+        ))}
+        {<UpdateUser user={selectedUser} updateUser={updateUser} />}
       </div>
     </>
   );
